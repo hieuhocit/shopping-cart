@@ -4,7 +4,7 @@ This is a simple shopping cart application featuring Dragon Ball cards. The proj
 
 ![Dragon Ball Card Screenshot](./src/assets/images/screenshot.png)
 
-Live preview of the project is [here](https://hieuhocit.github.io/shopping-cart/)
+Live preview of the project is [here](https://dragonballcardshop.netlify.app/)
 
 ## Features
 
