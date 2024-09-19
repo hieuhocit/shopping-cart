@@ -1,5 +1,1 @@
-/                                       /index.html 200
-/home                                   /
-/shop/characters/all                    /shop/characters/all
-/shop/characters/*                      /shop/characters/:splat
-/shop/characters/character/*            /shop/characters/character/:splat
+/*    /index.html   200
