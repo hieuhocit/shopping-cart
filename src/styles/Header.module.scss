@@ -1,0 +1,101 @@
+@use "./variables" as vars;
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 1.5rem 2rem;
+  min-height: var(--header-height);
+  max-height: var(--header-height);
+  z-index: 222;
+  background-color: var(--background-color);
+  backdrop-filter: blur(10px);
+
+  @media (max-width: vars.$breakpoint-md) {
+    & {
+      padding: 1.5rem;
+    }
+  }
+
+  @media (max-width: vars.$breakpoint-sm) {
+    & {
+      padding: 1rem;
+    }
+  }
+
+  .logoContainer {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: transform 200ms ease-in-out;
+    text-decoration: none;
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    img {
+      width: 100px;
+      object-fit: cover;
+    }
+
+    span {
+      color: white;
+      font-size: 1.6rem;
+      font-weight: bold;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      margin-left: -16px;
+
+      @media (max-width: vars.$breakpoint-md) {
+        & {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .cart {
+    color: white;
+    font-size: 2rem;
+    transition: transform 200ms ease-in-out;
+    cursor: pointer;
+    position: relative;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    .notices {
+      position: absolute;
+      font-family: "Times New Roman", Times, serif;
+      top: 0;
+      right: 0;
+      font-size: 0.8rem;
+      background-color: hsl(240, 100%, 40%);
+      padding: 0.25rem 0.5rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transform: translate(25%, -25%);
+      box-shadow: 0 0 10px 2px hsl(240, 100%, 40%);
+      animation: bouncing 1500ms ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes bouncing {
+  0% {
+    transform: translate(25%, -25%) scale(0.9);
+  }
+  50% {
+    transform: translate(25%, -25%) scale(1.1);
+  }
+  100% {
+    transform: translate(25%, -25%) scale(0.9);
+  }
+}

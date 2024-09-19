@@ -1,0 +1,184 @@
+@use "./variables" as vars;
+
+.search {
+  flex: 1;
+  position: relative;
+  max-width: var(--input-width);
+  margin-right: 1rem;
+
+  @media (min-width: vars.$breakpoint-sm) {
+    & {
+      margin-left: 1rem;
+    }
+  }
+
+  input {
+    width: 100%;
+    border: none;
+    outline: 0;
+    padding: 0.75rem 1.2rem;
+    border-radius: 1rem;
+    transition: box-shadow 200ms ease-in-out;
+    font-size: 1rem;
+
+    &:focus,
+    &:active {
+      box-shadow: 0 2px 12px 1px hsl(240, 100%, 70%);
+    }
+  }
+
+  button {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    transition: transform 200ms ease-in-out;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background-color: transparent;
+
+    &:hover,
+    &:active {
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    @media (max-width: vars.$breakpoint-sm) {
+      & {
+        display: none;
+      }
+    }
+
+    .icon {
+      font-size: 1.1rem;
+    }
+  }
+
+  .resultContainer {
+    --img-width: 200px;
+    --result-height: 500px;
+    --padding: 1rem 2rem;
+    --font-size-name: 2rem;
+    --gap: 24px;
+
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    min-height: var(--result-height);
+    max-height: var(--result-height);
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: scroll;
+    opacity: 0;
+    transform: translateY(100%) scaleX(0);
+    transition:
+      transform 300ms ease-in-out,
+      opacity 300ms ease-in-out;
+
+    &.show {
+      opacity: 1;
+      transform: translateY(100%) scaleX(1);
+    }
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+
+    .result {
+      h1 {
+        margin-top: 16px;
+        text-align: center;
+        color: #000;
+        font-size: 2rem;
+
+        @media (max-width: vars.$breakpoint-sm) {
+          & {
+            font-size: 1rem;
+          }
+        }
+      }
+
+      .card {
+        a {
+          color: #000;
+          text-decoration: none;
+          display: flex;
+          align-items: center;
+          gap: var(--gap);
+          padding: var(--padding);
+          transition: background-color 300ms ease-in-out;
+          cursor: pointer;
+
+          &:hover,
+          &:active {
+            background-color: rgba($color: #000000, $alpha: 0.2);
+          }
+
+          div {
+            background-image: url("../assets//images/bgcharacter.webp");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: var(--img-width);
+            height: var(--img-width);
+            border-radius: 4px;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: contain;
+              object-position: center;
+            }
+          }
+
+          p {
+            flex: 1;
+            font-size: var(--font-size-name);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+
+    @media (max-width: vars.$breakpoint-2xl) {
+      --img-width: 130px;
+      --result-height: 480px;
+      --padding: 14px;
+      --font-size-name: 1.8rem;
+    }
+
+    @media (max-width: vars.$breakpoint-xl) {
+      --img-width: 110px;
+      --result-height: 420px;
+      --padding: 14px;
+    }
+
+    @media (max-width: vars.$breakpoint-lg) {
+      --img-width: 100px;
+      --result-height: 380px;
+      --font-size-name: 1.6rem;
+    }
+
+    @media (max-width: vars.$breakpoint-md) {
+      & {
+        --img-width: 80px;
+        --result-height: 320px;
+        --padding: 12px;
+      }
+    }
+
+    @media (max-width: vars.$breakpoint-sm) {
+      & {
+        --img-width: 50px;
+        --result-height: 250px;
+        --padding: 16px 8px;
+        --font-size-name: 1.2rem;
+        --gap: 8px;
+      }
+    }
+  }
+}

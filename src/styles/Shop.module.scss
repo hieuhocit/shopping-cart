@@ -1,0 +1,28 @@
+.shop {
+  flex: 1 ;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  transform: translateX(100vw);
+  animation: slide-left 800ms ease-in-out forwards;
+
+  .items {
+    display: grid;
+    grid-template-columns: repeat(var(--quantity), var(--item-width));
+    gap: 2rem;
+  }
+}
+
+@keyframes slide-left {
+  0% {
+    transform: translateX(100vw);
+  }
+  80% {
+    transform: translateX(-5%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

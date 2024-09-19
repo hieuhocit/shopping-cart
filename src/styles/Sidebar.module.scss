@@ -1,0 +1,128 @@
+@use "./variables" as vars;
+
+.sidebar {
+  position: fixed;
+  margin-top: var(--header-height);
+  min-width: var(--sidebar-width);
+  max-width: var(--sidebar-width);
+  min-height: 100vh;
+  max-height: 100vh;
+  z-index: 111;
+  padding-left: 1.2rem;
+  background-color: transparent;
+
+  .navigation {
+    width: 100%;
+    height: 100%;
+    margin-top: 4rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--background-color);
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      list-style: none;
+
+      li {
+        border-radius: 1rem;
+        overflow: hidden;
+        background-color: white;
+        transition:
+          background-color 200ms ease-in-out,
+          transform 200ms ease-in-out;
+
+        &:hover {
+          background-color: rgba(99, 193, 224);
+          transform: scale(1.05);
+        }
+        
+        a {
+          display: block;
+          padding: 0.8rem 1rem;
+          text-decoration: none;
+          color: black;
+
+          &.active {
+            background-color: rgba(99, 193, 224);
+            cursor: default;
+            user-select: none;
+            pointer-events: none;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: vars.$breakpoint-md) {
+    & {
+      margin-top: 0;
+      padding: 1rem;
+      z-index: 333;
+      inset: 0;
+      user-select: none;
+      pointer-events: none;
+
+      .navigation {
+        margin-top: var(--header-height);
+        margin-left: 0;
+        background-color: transparent;
+        backdrop-filter: none;
+        padding: 0;
+        border-radius: 0;
+        opacity: 0;
+        transform: translateX(-200vw);
+        transition: transform 200ms ease-in-out;
+      }
+    }
+
+    &.open {
+      display: block;
+      pointer-events: fill;
+      .navigation {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+  }
+}
+
+.bgc {
+  position: fixed;
+  inset: 0;
+  background-color: var(--background-color);
+  transform: translateX(-200vw);
+  transition: transform 200ms ease-in-out;
+  z-index: 222;
+  background-color: var(--background-color);
+  backdrop-filter: blur(6px);
+  &.open {
+    transform: translateX(0);
+  }
+
+  @media (min-width: vars.$breakpoint-md) {
+    & {
+      display: none;
+    }
+  }
+}
+
+.icon {
+  position: fixed;
+  bottom: 2rem;
+  left: 8px;
+  padding: 0.6rem 0.8rem;
+  background-color: white;
+  color: black;
+  border-radius: 50%;
+  font-size: 1rem;
+  cursor: pointer;
+  display: none;
+  z-index: 999;
+
+  @media (max-width: vars.$breakpoint-md) {
+    & {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.loading {
+  position: absolute;
+  inset: 0;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  opacity: 0;
+  animation: appear 500ms ease forwards;
+  img{
+    
+  }
+}
+
+@keyframes appear {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

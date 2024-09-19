@@ -1,0 +1,57 @@
+.msgContainer {
+  max-width: fit-content;
+  min-width: fit-content;
+  background-color: hsl(0, 0%, 15%);
+  position: fixed;
+  top: 50px;
+  right: 0;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1rem;
+  border-radius: 3px;
+  transform: translateY(60px) translateX(100%);
+  --translate-Y: 60px;
+  --duration: 2000ms;
+  
+  user-select: none;
+  pointer-events: none;
+
+  animation: toast var(--duration) ease-in 50ms;
+  .msg {
+    color: white;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 1.2rem;
+
+    span {
+    }
+
+    .icon {
+      font-size: 1.5rem;
+      color: rgb(9, 237, 9);
+      font-weight: bolder;
+    }
+  }
+
+  @keyframes toast {
+    0% {
+      opacity: 0;
+      transform: translateX(100%) translateY(var(--translate-Y));
+    }
+    15% {
+      opacity: 1;
+      transform: translateX(-12px) translateY(var(--translate-Y));
+    }
+    50% {
+      opacity: 1;
+      transform: translateX(-12px) translateY(var(--translate-Y));
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-12px) translateY(calc(var(--translate-Y) - 30px));
+    }
+  }
+}

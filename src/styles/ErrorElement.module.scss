@@ -1,0 +1,40 @@
+.errorContainer {
+  background-color: #000;
+  min-width: 100vw;
+  max-width: 100vw;
+  min-height: 100vh;
+  max-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+
+  .error {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    color: white;
+    text-align: center;
+  }
+
+  button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 2rem;
+    a {
+      color: white;
+      text-decoration: none;
+      transition: color 200ms ease;
+    }
+
+    &:hover,
+    &:active {
+      a {
+        color: rgba(99, 193, 224);
+      }
+    }
+  }
+}

@@ -1,0 +1,74 @@
+@use "./styles/variables" as vars;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --header-height: 80px;
+  --sidebar-width: 200px;
+  --background-color: rgba(255, 255, 255, 0.2);
+  --input-width: 800px;
+  --item-width: 300px;
+  --quantity: 4;
+  --cart-width: 350px;
+  --slider-width: 50%;
+  --slider-height: 600px;
+}
+
+@media (max-width: vars.$breakpoint-2xl) {
+  :root {
+    --sidebar-width: 150px;
+    --item-width: 250px;
+    --quantity: 4;
+  }
+}
+
+@media (max-width: vars.$breakpoint-xl) {
+  :root {
+    --item-width: 250px;
+    --quantity: 3;
+    --slider-width: 100%;
+    --slider-height: 650px;
+  }
+}
+
+@media (max-width: vars.$breakpoint-lg) {
+  :root {
+    --input-width: 600px;
+    --item-width: 280px;
+    --quantity: 2;
+    --slider-width: 100%;
+    --slider-height: 600px;
+  }
+}
+
+@media (max-width: vars.$breakpoint-md) {
+  :root {
+    --sidebar-width: 100%;
+    --input-width: 500px;
+    --item-width: 220px;
+    --quantity: 2;
+    --slider-height: 500px;
+  }
+}
+
+@media (max-width: vars.$breakpoint-sm) {
+  :root {
+    --quantity: 1;
+    --item-width: 280px;
+    --input-width: 280px;
+    --cart-width: 300px;
+  }
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
