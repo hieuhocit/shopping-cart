@@ -15,7 +15,7 @@ export default function CardInSearch({ character, onClear }: { character: Purcha
   return (
     <li className={styles.card}>
       <NavLink
-        to={`/shop/characters/character/${character.id}`}
+        to={`/characters/character/${character.id}`}
         onClick={onClear}
       >
         <div>

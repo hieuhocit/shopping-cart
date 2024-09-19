@@ -46,7 +46,7 @@ export default function Product({ product }: { product: Purchase }) {
 
   return (
     <div className={styles.product}>
-      <NavLink to={'/shop/characters/character/' + product.id}>
+      <NavLink to={'/characters/character/' + product.id}>
         <div className={styles.imgContainer}>
           <img
             src={product.image}

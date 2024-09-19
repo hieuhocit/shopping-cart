@@ -46,7 +46,7 @@ export default function Sidebar() {
             </li>
             <li>
               <NavLink
-                to='shop/characters/all'
+                to='/characters/all'
                 onClick={() => setOpen(false)}
                 className={({ isActive }) => (isActive ? styles.active : '')}
               >

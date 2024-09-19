@@ -68,8 +68,8 @@ export default function Search() {
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    if (query.trim() === '') navigate(`/shop/characters/all`);
-    else navigate(`/shop/characters/${query.trim()}`);
+    if (query.trim() === '') navigate(`/characters/all`);
+    else navigate(`/characters/${query.trim()}`);
     setInitialState();
   }
 

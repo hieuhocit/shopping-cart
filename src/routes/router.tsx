@@ -16,12 +16,12 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: 'shop/characters/:query',
+        path: '/characters/:query',
         element: <Shop />,
         loader: shopLoader,
       },
       {
-        path: 'shop/characters/character/:id',
+        path: '/characters/character/:id',
         element: <Details />,
         loader: detailsLoader,
       },

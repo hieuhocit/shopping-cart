@@ -61,7 +61,7 @@ export default function CardInCard({
   return (
     <li className={styles.card}>
       <NavLink
-        to={`/shop/characters/character/${product.id}`}
+        to={`/characters/character/${product.id}`}
         onClick={onClickCloseCart}
         className={styles.imgContainer}
       >
@@ -74,7 +74,7 @@ export default function CardInCard({
 
       <div className={styles.container}>
         <NavLink
-          to={`/shop/characters/character/${product.id}`}
+          to={`/characters/character/${product.id}`}
           onClick={onClickCloseCart}
           className={styles.name}
         >
